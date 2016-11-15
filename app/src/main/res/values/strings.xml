@@ -3,5 +3,9 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="createaccount">No account yet? Create one</string>
+    <string name="noAccount">No account yet? Create one</string>
+    <string name="name">Name</string>
+    <string name="member">Already a member? Login</string>
+    <string name="createAccount">Create Account</string>
+
 </resources>
