@@ -16,6 +16,8 @@ import butterknife.InjectView;
 
 public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
+    private DBHelper db;
+
     @InjectView(R.id.input_name) EditText _nameText;
     @InjectView(R.id.input_email) EditText _emailText;
     @InjectView(R.id.input_password) EditText _passwordText;
@@ -28,6 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         ButterKnife.inject(this);
 
+        db = new DBHelper(this);
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,16 +64,29 @@ public class SignUpActivity extends AppCompatActivity {
         String name = _nameText.getText().toString();
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
-        new android.os.Handler().postDelayed(
+
+        if(db.getUser(email))
+        {
+            _emailText.setError("email already exists");
+            new android.os.Handler().postDelayed(
+                new Runnable() {
+                public void run() {
+                    onSignupFailed();
+                    progressDialog.dismiss();
+                }
+            }, 3000);
+        }
+        else {
+            db.addUser(email, password);
+            new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
-                        // On complete call either onSignupSuccess or onSignupFailed
-                        // depending on success
                         onSignupSuccess();
-                        // onSignupFailed();
                         progressDialog.dismiss();
                     }
                 }, 3000);
+        }
+
 
     }
     public void onSignupSuccess() {
@@ -80,10 +96,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getBaseContext(), "SignUp failed", Toast.LENGTH_LONG).show();
         _signupButton.setEnabled(true);
     }
+
     public boolean validate() {
         boolean valid = true;
 

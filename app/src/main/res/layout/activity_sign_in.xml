@@ -26,8 +26,9 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/top_edittext_bg">
             <EditText
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
@@ -40,21 +41,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bottom_edittext_bg">
             <EditText android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="@string/password"/>
+                android:hint="@string/password" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
+            android:textAllCaps="false"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
-            android:padding="12dp"
+            android:padding="15dp"
             android:text="@string/login"/>
 
         <TextView android:id="@+id/link_signup"

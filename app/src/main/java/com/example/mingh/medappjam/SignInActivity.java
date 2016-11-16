@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class SignInActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
+    private DBHelper db;
 
     EditText emailText, passwordText;
     TextView signUpLink;
@@ -26,15 +27,16 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        db = new DBHelper(this);
         emailText = (EditText) findViewById(R.id.input_email);
         passwordText = (EditText) findViewById(R.id.input_password);
         signUpLink = (TextView) findViewById(R.id.link_signup);
         logInButton = (Button) findViewById(R.id.btn_login);
 
-        createListner();
+        createListener();
     }
 
-    private void createListner()
+    private void createListener()
     {
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,17 +74,26 @@ public class SignInActivity extends AppCompatActivity {
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
-        // TODO: Implement your own authentication logic here.
-
-        new android.os.Handler().postDelayed(
+        if(db.getUser(email, password))
+        {
+            new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
                         onLoginSuccess();
-                        // onLoginFailed();
                         progressDialog.dismiss();
                     }
                 }, 3000);
+
+        }else {
+            new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        onLoginFailed();
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
+        }
+
     }
 
     @Override
@@ -110,7 +121,6 @@ public class SignInActivity extends AppCompatActivity {
 
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
         logInButton.setEnabled(true);
     }
 
