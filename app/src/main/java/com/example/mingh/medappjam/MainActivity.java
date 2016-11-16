@@ -1,19 +1,23 @@
 package com.example.mingh.medappjam;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< Updated upstream
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.TabLayout;
-=======
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
->>>>>>> Stashed changes
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("Tab 2"));
         tabs.addTab(tabs.newTab().setText("Tab 3"));
 
-<<<<<<< Updated upstream
-
     }
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         public Adapter(FragmentManager manager) {
             super(manager);
         }
+
 
         @Override
         public Fragment getItem(int position) {
