@@ -16,6 +16,7 @@ public class SignInActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
     private DBHelper db;
+    private SessionManager session;
 
     EditText emailText, passwordText;
     TextView signUpLink;
@@ -28,6 +29,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         db = new DBHelper(this);
+        session = new SessionManager(getApplicationContext());
         emailText = (EditText) findViewById(R.id.input_email);
         passwordText = (EditText) findViewById(R.id.input_password);
         signUpLink = (TextView) findViewById(R.id.link_signup);
@@ -76,6 +78,7 @@ public class SignInActivity extends AppCompatActivity {
 
         if(db.getUser(email, password))
         {
+            session.createLoginSession(email);
             new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
@@ -100,7 +103,7 @@ public class SignInActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
-
+                Log.d(TAG, "RESULT");
                 // TODO: Implement successful signup logic here
                 // By default we just finish the Activity and log them in automatically
                 this.finish();
@@ -116,6 +119,10 @@ public class SignInActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         logInButton.setEnabled(true);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
         finish();
     }
 

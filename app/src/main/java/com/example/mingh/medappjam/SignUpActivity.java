@@ -17,6 +17,8 @@ import butterknife.InjectView;
 public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
     private DBHelper db;
+    private SessionManager session;
+
 
     @InjectView(R.id.input_name) EditText _nameText;
     @InjectView(R.id.input_email) EditText _emailText;
@@ -31,6 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         db = new DBHelper(this);
+        session =  new SessionManager(getApplicationContext());
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
             }, 3000);
         }
         else {
+            session.createLoginSession(email);
             db.addUser(email, password);
             new android.os.Handler().postDelayed(
                 new Runnable() {
