@@ -5,18 +5,17 @@ package com.example.mingh.medappjam;
  */
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Provides UI for the view with List.
+ * Provides UI for the view with Cards.
  */
-public class ListContentFragment extends Fragment {
+public class ActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.item_list, null);
+        return inflater.inflate(R.layout.item_activity, null);
     }
 }

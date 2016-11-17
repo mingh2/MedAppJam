@@ -21,9 +21,9 @@
     android:background="#FAFAFA"
     android:padding="@dimen/activity_horizontal_margin">
     <TextView
-        android:id="@+id/card_text"
+        android:id="@+id/tile_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/jumbo"
-        android:text="Cards" />
+        android:text="Chat" />
 </LinearLayout>
