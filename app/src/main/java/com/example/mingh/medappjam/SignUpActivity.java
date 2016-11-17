@@ -15,7 +15,6 @@ import butterknife.InjectView;
 
 
 public class SignUpActivity extends AppCompatActivity {
-    private static final String TAG = "SignupActivity";
     private DBHelper db;
     private SessionManager session;
 
@@ -25,6 +24,8 @@ public class SignUpActivity extends AppCompatActivity {
     @InjectView(R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_signup) Button _signupButton;
     @InjectView(R.id.link_login) TextView _loginLink;
+
+    private EditText nameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,6 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
     public void signup() {
-        Log.d(TAG, "Signup");
 
         if (!validate()) {
             onSignupFailed();
