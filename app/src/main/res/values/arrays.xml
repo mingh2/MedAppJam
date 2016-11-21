@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string-array name="places">
+    <string-array name="gesture">
         <item>Inner Arm Stretch</item>
         <item>Elbow Stretch</item>
         <item>Crawling Stretch</item>
         <item>Elbow Weight Training</item>
         <item>Seated Pushup</item>
     </string-array>
-    <string-array name="place_desc">
+    <string-array name="gesture_desc">
         <item> Place your hands palms down on the table and rotate your wrist.</item>
         <item>The elbow stretch focuses on restoring a range of motion to the elbow.</item>
         <item>Gently lean your body backwards, keeping your arm position, until you feel a stretch.</item>
@@ -16,7 +16,7 @@
         <item>Sultan Ahmed Mosque is mosque locates in Istabul, Turkey</item>
         <item>Table Mountain is mountain and park locates in Cape Town, South Africa.</item>
     </string-array>
-    <string-array name="place_details">
+    <string-array name="gesture_details">
         <item>For this exercise, place your hands palms down on the table and rotate your wrist
             so your fingers point towards your body. Keeping your elbows straight, slowly move
             your body backwards until you feel a stretch on the inside of the arm. Lean on the
@@ -40,7 +40,7 @@
         </item>
     </string-array>
 
-    <array name="places_picture">
+    <array name="gesture_picture">
         <item>@drawable/innerarmstretch</item>
         <item>@drawable/elbowstretch</item>
         <item>@drawable/crawlingstretch</item>

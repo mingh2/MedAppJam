@@ -55,9 +55,9 @@ public class ActivityFragment extends Fragment {
         private final Drawable[] mGesturePictures;
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
-            mGesture = resources.getStringArray(R.arrays.gestures);
+            mGesture = resources.getStringArray(R.array.gesture);
             mGestureDesc = resources.getStringArray(R.array.gesture_desc);
-            TypedArray a = resources.obtainTypedArray(R.array.places_picture);
+            TypedArray a = resources.obtainTypedArray(R.array.gesture_picture);
             mGesturePictures = new Drawable[a.length()];
             for (int i = 0; i < mGesturePictures.length; i++) {
                 mGesturePictures[i] = a.getDrawable(i);
