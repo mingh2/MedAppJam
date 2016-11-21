@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="gesture">
+        <item>Inner Arm Stretch</item>
+        <item>Elbow Stretch</item>
+        <item>Crawling Stretch</item>
+        <item>Elbow Weight Training</item>
+        <item>Seated Pushup</item>
+    </string-array>
+    <string-array name="gesture_desc">
+        <item> Place your hands palms down on the table and rotate your wrist.</item>
+        <item>The elbow stretch focuses on restoring a range of motion to the elbow.</item>
+        <item>Gently lean your body backwards, keeping your arm position, until you feel a stretch.</item>
+        <item>Gently bend and straighten the elbow.</item>
+        <item>Sultan Ahmed Mosque is mosque locates in Istabul, Turkey</item>
+        <item>Table Mountain is mountain and park locates in Cape Town, South Africa.</item>
+    </string-array>
+    <string-array name="gesture_details">
+        <item>For this exercise, place your hands palms down on the table and rotate your wrist
+            so your fingers point towards your body. Keeping your elbows straight, slowly move
+            your body backwards until you feel a stretch on the inside of the arm. Lean on the
+            table for support if you need to.
+        </item>
+        <item>The elbow stretch focuses on restoring a range of motion to the elbow. This exercise
+            can be done while sitting or standing. Hold the arm at a comfortable position,
+            then carefully bend and straighten the elbows as if you are doing a dumbbell curl.
+        </item>
+        <item>Take up a crawling position with your elbows straight. Gently lean your body
+            backwards, keeping your arm position, until you feel a stretch on your inner arm.
+            Hold the position and repeat.
+        </item>
+        <item>In a standing or sitting position, hold a small weight in your hand. Gently bend
+            and straighten the elbow. Repeat to your endurance point. Over time, increase
+            repetitions as the elbow strengthens.
+        </item>
+        <item>Finally, sit on the ground with your knees bent and your palms on the floor,
+            keeping your fingers pointing forward. Push through your hands to cause your bottom
+            to lift off the floor slightly. Repeat as you grow stronger.
+        </item>
+    </string-array>
+
+    <array name="gesture_picture">
+        <item>@drawable/innerarmstretch</item>
+        <item>@drawable/elbowstretch</item>
+        <item>@drawable/crawlingstretch</item>
+        <item>@drawable/elbowstretch</item>
+        <item>@drawable/seatedpushup</item>
+    </array>
+</resources>
