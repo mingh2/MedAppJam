@@ -38,7 +38,7 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:cardview-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
-<<<<<<< HEAD
+
     compile 'com.android.support:support-annotations:+'
 
     //for chat
@@ -46,7 +46,6 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.squareup.picasso:picasso:2.1.1'
-=======
->>>>>>> c19241c3302411e7beb3d438b5c90515e044bef2
+
 
 }

@@ -69,42 +69,42 @@ public class InChatActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void postMessage() {
-        String text = messageInput.getText().toString();
-
-        // return if the text is blank
-        if(text.equals("")) { return; }
-
-        RequestParams params = new RequestParams();
-
-        // set our JSON object
-        params.put("text", text);
-//        params.put("name", username);
-        params.put("time", new Date().getTime());
-
-        // create our HTTP client
-        AsyncHttpClient client = new AsyncHttpClient();
-
-        client.post(MESSAGES_ENDPOINT, params, new JsonHttpResponseHandler(){
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        messageInput.setText("");
-                    }
-                });
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        "Something went wrong :(",
-                        Toast.LENGTH_LONG
-                ).show();
-            }
-        });
+//        String text = messageInput.getText().toString();
+//
+//        // return if the text is blank
+//        if(text.equals("")) { return; }
+//
+//        RequestParams params = new RequestParams();
+//
+//        // set our JSON object
+//        params.put("text", text);
+////        params.put("name", username);
+//        params.put("time", new Date().getTime());
+//
+//        // create our HTTP client
+//        AsyncHttpClient client = new AsyncHttpClient();
+//
+//        client.post(, params, new JsonHttpResponseHandler(){
+//
+//            @Override
+//            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        messageInput.setText("");
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+//                Toast.makeText(
+//                        getApplicationContext(),
+//                        "Something went wrong :(",
+//                        Toast.LENGTH_LONG
+//                ).show();
+//            }
+//        });
 
     }
 }

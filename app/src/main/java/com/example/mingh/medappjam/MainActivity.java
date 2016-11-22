@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new ActivityFragment(), "Activity");
-        adapter.addFragment(new HistoryFragment(), "History");
+       // adapter.addFragment(new HistoryFragment(), "History");
         adapter.addFragment(new ChatFragment(), "Chat");
         viewPager.setAdapter(adapter);
     }

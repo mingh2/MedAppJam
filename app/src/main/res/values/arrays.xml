@@ -51,4 +51,11 @@
         <item>@drawable/tricepkickbackswithband</item>
         <item>@drawable/triceppushdowns</item>
     </array>
+    <array name="message">
+        <item>Dr.Strange</item>
+        <item>Nurse Lily</item>
+        <item>David</item>
+        <item>Dr.Andy</item>
+        <item>Vivian</item>
+    </array>
 </resources>
