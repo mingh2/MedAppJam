@@ -27,7 +27,11 @@
         </activity>
 
         <activity
-            android:name=".SignUpActivity"
+        android:name=".SignUpActivity"
+        android:theme="@style/AppTheme.Dark" />
+
+        <activity
+            android:name=".MotionActivity"
             android:theme="@style/AppTheme.Dark" />
 
     </application>

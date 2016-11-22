@@ -4,20 +4,16 @@
     <string-array name="gesture">
         <item>Bicep Curl</item>
         <item>Resistance Band</item>
-        <item>Tricep Extension Supine</item>
-        <item>Tricep Kickbacks with band</item>
+        <item>Tricep Extension</item>
+        <item>Tricep Kickbacks</item>
         <item>Tricep Push Downs</item>
     </string-array>
     <string-array name="gesture_desc">
-        <item>Varying the angle of the shoulder and also the rotation of the lower arm during Biceps
-            Curls can change the emphasis onto different parts of the muscle.</item>
-        <item>This exercise works the tricep muscle. The athlete starts with the elbow bent and
-            pointing to the ceiling and straightens the arm in a controlled manner.</item>
-        <item>The tricep extension exercise shown here strengthens the Triceps Brachii muscle.
-            It is sometimes also known as a skull crusher or jaw breaker!</item>
-        <item>The tricep kickback exercise can be performed with a resistance band as shown here,
-            or with a dumbbell. It is a great mid-stage rehab exercise to isolate the triceps.</item>
-        <item>The tricep push down exercise can be performed with a band as shown here or on some resistance machines.</item>
+        <item>This exercise varies the angle of the shoulder</item>
+        <item>This exercise works the tricep muscle. </item>
+        <item>This exercise strengthens the Triceps Brachii muscle.</item>
+        <item>This exercise is a mid-stage rehab exercise.</item>
+        <item>This exercise can be performed with a band</item>
     </string-array>
     <string-array name="gesture_details">
         <item>The upper arm is supported just above the elbow by the back of the other hand, whilst
@@ -47,7 +43,7 @@
     <array name="gesture_picture">
         <item>@drawable/bicepcurl</item>
         <item>@drawable/resistancebandtricepextension</item>
-        <item>@drawable/tricepextensionsupine</item>
+        <item>@drawable/triceprxtensionsupine</item>
         <item>@drawable/tricepkickbackswithband</item>
         <item>@drawable/triceppushdowns</item>
     </array>

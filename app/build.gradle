@@ -21,10 +21,6 @@ android {
     }
 }
 
-////for chat
-repositories{
-    maven{url 'http://clojars.org/repo'}
-}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -38,6 +34,7 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:cardview-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+<<<<<<< HEAD
 
     compile 'com.android.support:support-annotations:+'
 
@@ -47,5 +44,11 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.squareup.picasso:picasso:2.1.1'
 
+=======
+
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.1@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+>>>>>>> a7bf32acd08a91aeb4ee99683290607f40424c7f
 
 }
