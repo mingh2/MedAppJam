@@ -2,49 +2,53 @@
 
 <resources>
     <string-array name="gesture">
-        <item>Inner Arm Stretch</item>
-        <item>Elbow Stretch</item>
-        <item>Crawling Stretch</item>
-        <item>Elbow Weight Training</item>
-        <item>Seated Pushup</item>
+        <item>Bicep Curl</item>
+        <item>Resistance Band</item>
+        <item>Tricep Extension Supine</item>
+        <item>Tricep Kickbacks with band</item>
+        <item>Tricep Push Downs</item>
     </string-array>
     <string-array name="gesture_desc">
-        <item> Place your hands palms down on the table and rotate your wrist.</item>
-        <item>The elbow stretch focuses on restoring a range of motion to the elbow.</item>
-        <item>Gently lean your body backwards, keeping your arm position, until you feel a stretch.</item>
-        <item>Gently bend and straighten the elbow.</item>
-        <item>Sultan Ahmed Mosque is mosque locates in Istabul, Turkey</item>
-        <item>Table Mountain is mountain and park locates in Cape Town, South Africa.</item>
+        <item>Varying the angle of the shoulder and also the rotation of the lower arm during Biceps
+            Curls can change the emphasis onto different parts of the muscle.</item>
+        <item>This exercise works the tricep muscle. The athlete starts with the elbow bent and
+            pointing to the ceiling and straightens the arm in a controlled manner.</item>
+        <item>The tricep extension exercise shown here strengthens the Triceps Brachii muscle.
+            It is sometimes also known as a skull crusher or jaw breaker!</item>
+        <item>The tricep kickback exercise can be performed with a resistance band as shown here,
+            or with a dumbbell. It is a great mid-stage rehab exercise to isolate the triceps.</item>
+        <item>The tricep push down exercise can be performed with a band as shown here or on some resistance machines.</item>
     </string-array>
     <string-array name="gesture_details">
-        <item>For this exercise, place your hands palms down on the table and rotate your wrist
-            so your fingers point towards your body. Keeping your elbows straight, slowly move
-            your body backwards until you feel a stretch on the inside of the arm. Lean on the
-            table for support if you need to.
+        <item>The upper arm is supported just above the elbow by the back of the other hand, whilst
+            the athlete bends the elbow against the resistance of the weight.
+            Performing the exercise with a larger degree of elbow flexion works the long head of the biceps more.
+            Performing this exercise with the palm facing up works the Biceps Brachii, with the palm
+            down emphasizes the Brachialis and with the thumb upwards, focuses on the Brachioradialis.
         </item>
-        <item>The elbow stretch focuses on restoring a range of motion to the elbow. This exercise
-            can be done while sitting or standing. Hold the arm at a comfortable position,
-            then carefully bend and straighten the elbows as if you are doing a dumbbell curl.
+        <item>Place the centre of the band under your feet and hold one end in each hand.
+        Start with the ams behind your head, elbows pointing to the ceiling.
+        Straighten the arms overhead.
         </item>
-        <item>Take up a crawling position with your elbows straight. Gently lean your body
-            backwards, keeping your arm position, until you feel a stretch on your inner arm.
-            Hold the position and repeat.
+        <item>The starting position is lying on the back with the elbow bent and pointing to the celieing as shown.
+            The elbow is the straightened, listing the weight up above the head.
+            The weight is then carefully lowered back down to the shoulder.
         </item>
-        <item>In a standing or sitting position, hold a small weight in your hand. Gently bend
-            and straighten the elbow. Repeat to your endurance point. Over time, increase
-            repetitions as the elbow strengthens.
+        <item>Stand with one end of the band under the feet and the other end in one hand.
+            Lean forwards at the hip, keeping the back straight.
+            Start with the arm bent at the elbow, wrist at chest level.
+            Straighten the arm out behind you.
         </item>
-        <item>Finally, sit on the ground with your knees bent and your palms on the floor,
-            keeping your fingers pointing forward. Push through your hands to cause your bottom
-            to lift off the floor slightly. Repeat as you grow stronger.
+        <item>The band is anchored to a high point and one end held in each hand.
+            The athlete starts with their elbows bent and then straightens them against the resistance of the band.
         </item>
     </string-array>
 
     <array name="gesture_picture">
-        <item>@drawable/innerarmstretch</item>
-        <item>@drawable/elbowstretch</item>
-        <item>@drawable/crawlingstretch</item>
-        <item>@drawable/elbowstretch</item>
-        <item>@drawable/seatedpushup</item>
+        <item>@drawable/bicepcurl</item>
+        <item>@drawable/resistancebandtricepextension</item>
+        <item>@drawable/tricepextensionsupine</item>
+        <item>@drawable/tricepkickbackswithband</item>
+        <item>@drawable/triceppushdowns</item>
     </array>
 </resources>
