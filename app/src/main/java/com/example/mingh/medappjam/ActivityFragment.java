@@ -4,7 +4,6 @@ package com.example.mingh.medappjam;
  * Created by jessicazeng1127 on 11/15/16.
  */
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -15,19 +14,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Button;
+import android.content.Intent;
 /**
  * Provides UI for the view with Cards.
  */
 public class ActivityFragment extends Fragment {
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(
                 R.layout.recycler_view, container, false);
         ContentAdapter adapter = new ContentAdapter(recyclerView.getContext());
@@ -42,15 +39,20 @@ public class ActivityFragment extends Fragment {
         public TextView name;
         public TextView description;
         public Button button;
-        public Context context;
         public ViewHolder(final LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_activity, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.card_image);
             name = (TextView) itemView.findViewById(R.id.card_title);
             description = (TextView) itemView.findViewById(R.id.card_text);
             button = (Button) itemView.findViewById(R.id.action_button);
-            context = inflater.getContext();
 
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(inflater.getContext(), MotionActivity.class);
+                    inflater.getContext().startActivity(intent);
+                }
+            });
         }
     }
     /**
