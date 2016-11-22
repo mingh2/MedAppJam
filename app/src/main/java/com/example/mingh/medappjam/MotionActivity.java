@@ -1,5 +1,6 @@
 package com.example.mingh.medappjam;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,10 +16,17 @@ import android.hardware.SensorManager;
 import android.content.Context;
 
 import android.os.Vibrator;
+import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 public class MotionActivity extends AppCompatActivity implements SensorEventListener {
+    private SessionManager session;
+    private Button play;
+    private VideoView videoView;
+    private MediaController mediaController;
 
     private float lastX=0, lastY=0, lastZ=0, deltaX=0, deltaY = 0, deltaZ = 0, vibrateThreshold=0 ;
     public Vibrator v;
@@ -38,7 +46,9 @@ public class MotionActivity extends AppCompatActivity implements SensorEventList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motion);
 
+        session = new SessionManager(getApplicationContext());
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
         if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
             // success! we have an accelerometer
 
@@ -49,15 +59,9 @@ public class MotionActivity extends AppCompatActivity implements SensorEventList
             // fai! we dont have an accelerometer!
         }
 
-
-//        currentX = (TextView) findViewById(R.id.currentX);
-//        currentY = (TextView) findViewById(R.id.currentY);
-//        currentZ = (TextView) findViewById(R.id.currentZ);
-
-//        maxX = (TextView) findViewById(R.id.maxX);
-//        maxY = (TextView) findViewById(R.id.maxY);
-//        maxZ = (TextView) findViewById(R.id.maxZ);
-
+        play = (Button) findViewById(R.id.play_button);
+        videoView = (VideoView) findViewById(R.id.video_view);
+        mediaController = new MediaController(this);
         accInfo = (TextView) findViewById(R.id.accInfo);
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -65,14 +69,6 @@ public class MotionActivity extends AppCompatActivity implements SensorEventList
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     //onResume() register the accelerometer for listening the events
@@ -123,6 +119,7 @@ public class MotionActivity extends AppCompatActivity implements SensorEventList
     }
 
 
+    //Add Menu to the Tool Bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -130,18 +127,31 @@ public class MotionActivity extends AppCompatActivity implements SensorEventList
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        switch(id)
+        {
+            case R.id.action_signout:
+                session.logoutUser();
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void videoPlay(View v)
+    {
+        String videoPath = "android.resource://com.example.mingh.medappjam/" + R.raw.arm;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
+        videoView.start();
+    }
 }
+
+

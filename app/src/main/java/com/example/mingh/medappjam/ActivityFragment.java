@@ -9,6 +9,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Button;
 import android.content.Intent;
+
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 /**
  * Provides UI for the view with Cards.
  */
@@ -35,6 +40,7 @@ public class ActivityFragment extends Fragment {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        public CardView cardView;
         public ImageView picture;
         public TextView name;
         public TextView description;
@@ -45,14 +51,7 @@ public class ActivityFragment extends Fragment {
             name = (TextView) itemView.findViewById(R.id.card_title);
             description = (TextView) itemView.findViewById(R.id.card_text);
             button = (Button) itemView.findViewById(R.id.action_button);
-
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(inflater.getContext(), MotionActivity.class);
-                    inflater.getContext().startActivity(intent);
-                }
-            });
+            cardView = (CardView) itemView.findViewById(R.id.card_view);
         }
     }
     /**
@@ -60,11 +59,13 @@ public class ActivityFragment extends Fragment {
      */
     public static class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
         // Set numbers of List in RecyclerView.
-        private static final int LENGTH = 18;
+        private static final int LENGTH = 10;
         private final String[] mGesture;
         private final String[] mGestureDesc;
         private final Drawable[] mGesturePictures;
+        private final Context context;
         public ContentAdapter(Context context) {
+            this.context = context;
             Resources resources = context.getResources();
             mGesture = resources.getStringArray(R.array.gesture);
             mGestureDesc = resources.getStringArray(R.array.gesture_desc);
@@ -83,9 +84,18 @@ public class ActivityFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
+            YoYo.with(Techniques.FadeIn).playOn(holder.cardView);
             holder.picture.setImageDrawable(mGesturePictures[position % mGesturePictures.length]);
             holder.name.setText(mGesture[position % mGesture.length]);
             holder.description.setText(mGestureDesc[position % mGesturePictures.length]);
+
+            holder.cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, MotionActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
 
         @Override
